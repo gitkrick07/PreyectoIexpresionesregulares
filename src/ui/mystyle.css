@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url(../ui/fondo.jpg) no-repeat center top;
+    background-size: cover;
+    height: 100vh;
+}
+
+.form-transparent {
+    opacity: 0.90;
+}
+
+.text-header {
+    font-size: small;
+}
+
+.h5 {
+    color: #fff;
+    font-size: small;
+}
+
+.h4 {
+    color: #fff;
+    font-size: 18;
+}
+
+.listdate {
+    overflow: scroll;
+    height: 50;
+    background: #fff;
+    opacity: 0.90;
+}
+
+.splash span {
+    font-family: "montserrat", sans-serif;
+    font-size: 55px;
+    color: white;
+}
+
+.splash {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 200;
+    text-align: center;
+    line-height: 90vh;
+    background: url(../ui/intro.jpg) no-repeat center top;
+    background-size: cover;
+}
+
+.splash.display-none {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url(../ui/intro.jpg) no-repeat center top;
+    background-size: cover;
+    z-index: -10;
+    line-height: 90vh;
+    transition: all 0.5s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+}
+
+.loading {
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border-top: 10px solid #e74c3c;
+    position: relative;
+    animation: a1 2s linear infinite;
+}
+
+.loading::before,
+.loading::after {
+    content: '';
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    top: -10px;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+
+.loading::before {
+    border-top: 10px solid #e67e22;
+    transform: rotate(120deg);
+}
+
+.loading::after {
+    border-top: 10px solid #3498db;
+    transform: rotate(240deg);
+}
+
+@keyframes a1 {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes a2 {
+    to {
+        transform: rotate(-360deg);
+    }
+}

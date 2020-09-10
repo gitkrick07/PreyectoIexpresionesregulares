@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informacion Adicional</title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+</head>
+
+<body>
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#expression">Expresiones Regulares</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#app">Detalles Aplicación</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#config">Créditos</a>
+        </li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade show active" id="expression" style="display: block;">
+            <div class="container-fluid">
+                <div class="card border-success mb-3 mt-2" style="max-width: 70rem;">
+                    <div class="card-header">Expresiones regulares implementados para la validación de los datos</div>
+                    <div class="card-body">
+                        <h6><b>Nombre:</b><pre>/^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/</pre></h6>
+                        <span class="card-text"><em>Valída nombres que inicien con cualquer letra o vacal, con acento. restricción: Tiene que empezar con mayúscula.</em></span>
+                        <hr>
+                        <!--, //-->
+                        <h6><b>Dirección:</b><pre>/^[a-zA-Z0-9\s\.\-]+\,[A-Za-zñáéíóú\s]+\,[A-Za-zñáéíóú\s]+$/</pre></h6>
+                        <span class="card-text"><em>Valída direcciones en formato: calle+ciudad+provincia, utilizando números,letras,espacio,coma,y guion.</em></span>
+                        <hr>
+                        <h6><b>Constraseña:</b><pre>/^.{8,20}$/</pre></h6>
+                        <span class="card-text"><em>valida password con cualquier caracter mayor a 8 unidades.</em></span>
+                        <hr>
+                        <h6><b>Correo Electrónico:</b><pre>/^[a-zA-Z0-9_.+-]+@[a-z0-9-]+\.[a-z0-9-.]+$/</pre></h6>
+                        <span class="card-text"><em>valída correo con cualquier caracter, posterior a la @ todos son minuscula.</em></span>
+                        <hr>
+                        <h6><b>Género:</b><pre>/^([f|m|F|M]{1}[a|e]{1}[c-u]+[n|l]{1}[ino])$/</pre></h6>
+                        <span class="card-text"><em>valída unicamente las opciones de femenino ó masculino.</em></span>
+                        <hr>
+                        <h6><b>Dpi cui:</b><pre>(1) /^[0-9]{4}[0-9]{5}[0-2]{1}[0-9]{1}[0-2]{1}[0-9]{1}$/<br>(2) /^([0-9]{4})\-([0-9]{5})\-([0-2]{1}[0-9]{1}[0-2]{1}[0-9]{1})$/</pre></h6>
+                        <span class="card-text"><em>Valída numeros de dpi de 13 digitos, con la restricción de los ultimos 4, que tiene que cumplir con el rango de departamento y municipio.</em></span><br>
+                        <span class="card-text"><em>(1)sin '-' (2)con'-'</em></span>
+                        <hr>
+                        <h6><b>Nit código tributario:</b><pre>/^([0-9]{6,7})\-([0-9]{1})$/</pre></h6>
+                        <span class="card-text"><em>valída unicamente numeros de 6 a 8 digitos, antes del ultimo digito debe ir el guión.</em></span>
+                        <hr>
+                        <h6><b>Código Postal:</b><pre>/^[0-2]{1}[0-9]{1}[0-2]{1}[0-9]{1}$/</pre></h6>
+                        <span class="card-text"><em>valida si es correspondiente al rango de municipio y departemento.</em></span>
+                        <hr>
+                        <h6><b>Número teléfono:</b><pre>(1) /^[5,0,2]{3}[4|5|7]{1}([\d]{7})$/<br>(2) /^[4|5|7]{1}([\d]{7})$/</pre></h6>
+                        <span class="card-text">(1)<em>Valida el número de teléfono con el código del país 502.<br>(2)Valida el número de teléfono sin el código del país.</em></span>
+                        <hr>
+                        <h6><b>Fecha:</b><pre>(1) /^(0[1-9]|1\d|2\d|3[01])\/(0[1-9]|1[0-2])\/(19|20)\d{2}$/</pre></h6>
+                        <span class="card-text"><em>(1)valida formato de fecha con diagonales.|20/01/2020|</em></span>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade show active" id="app" style="display: none;">
+            <div class="container-fluid">
+                <div class="card border-success mb-3 mt-2" style="max-width: 70rem;">
+                    <div class="card mb-3">
+                        <h4 class="card-header">EXPRESIONES REGULARES| VALIDACIÓN DE DATOS</h4>
+                        <div class="card-body">
+                            <h5 class="card-title">Formulario de datos</h5>
+                            <h6 class="card-subtitle text-muted">Aplicación de escritorio para validar datos por medio de expresiones regulares.</h6>
+                        </div>
+                        <img style="height: 500px; width: 100%; display: block;" src="screen.jpg" alt="Card image">
+                        <div class="card-body">
+                            <p class="card-text">Detalles de la aplicación.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Lengueaje de Programación: Javascript</li>
+                            <li class="list-group-item">Herramientas de diseño: html5 , css3 'boostrap4'., Chorminum</li>
+                            <li class="list-group-item">Frameworks: electron js, node js</li>
+                            <li class="list-group-item">Descripción: </li>
+                            <em>La apliación multiplataforma ('windows,MACos,linux'), de arquitectura de 64x.bits, para escritorio. 
+                                Implementa  expresiones regulares para validar  datos: Nombre, Dirección, Género, rango de fechas,
+                                Correo electronico y contraseña.<br> 
+                                En  contexto del pais de Guatemala: número de teléfono, DPI 'documento personal de identificación',
+                                Nit 'Número de identificación tributario', y Código postal.<br> 
+                                Valída cada uno de los datos ingresados, mostrando un indicardor de exito ó de error del campo.<br>
+                                Lista el registro de datos validados,  y los almacena en memoria dinámica con la opcion de borrar. 
+                            </em>
+                        </ul>
+                        <div class="card-body">
+                            <a href="#" class="card-link">Subir</a>
+
+                        </div>
+                        <div class="card-footer text-muted">
+                            Septiembre de 2020
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade show active" id="config" style="display: none;">
+            <div class="container-fluid">
+                <div class="card border-success mb-3 mt-2" style="max-width: 70rem;">
+                    <div class="card mb-3">
+                        <h4 class="card-header">CRÉDITOS DE AUTOR</h4>
+                        <div class="card-body">
+                            <h5 class="card-title">APLICACIÓN DE VALIDACIÓN DE DATOS</h5>
+                        </div>
+                        <img style="height: 400px; width: 500px; display: block; margin-left: 200px;" src="logo.jpg" alt="Card image">
+                        <div class="card-body">
+                            <p class="card-text"><b>Facultad de Ingenieria - Universidad Mariano Galvez de Guatemala</b></p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Nombre: Kevin Estuardo Piló Tuy</li>
+                            <li class="list-group-item">Carné. 2290-18-23462</li>
+                            <li class="list-group-item">Curso: Autómas y Lenguajes Formales.</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="#" class="card-link">Subir</a>
+
+                        </div>
+                        <div class="card-footer text-muted">
+                            Septiembre de 2020
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script>
+    const panel = document.querySelectorAll('.nav-link');
+    const tabcontenet = document.querySelectorAll('.tab-pane.fade.show.active');
+
+    panel.forEach(function(tab, tab_index) {
+        tab.addEventListener('click', function() {
+            panel.forEach(function(tab) {
+                tab.classList.remove('active');
+            })
+            tab.classList.add('active');
+            tabcontenet.forEach(function(content, content_index) {
+                if (content_index === tab_index) {
+
+                    content.style.display = "block";
+
+                } else {
+
+                    content.style.display = "none";
+                }
+            })
+
+        })
+
+    })
+</script>
+
+</html>

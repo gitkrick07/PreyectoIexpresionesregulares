@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expresiones Regulares</title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="./mystyle.css">
+</head>
+
+<body>
+    <div class="splash">
+        <span class="fade-in"> BIENVENIDO | Expresiones Regulares </span>
+        <div class="loading"></div>
+    </div>
+    <div class="form-transparent">
+        <div class="container-fluid">
+            <form class="" id="formData">
+                <div class="card text-center bg-warning mt-2 mb-1">
+                    <h4 class="h4"> Expresiones Regulares | Validación de datos</h4>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mt-2 text-center">
+                        <div class="card text-white bg-primary mb-auto" style="max-width: 30rem;">
+                            <div class="card-body">
+                                <!-- group name-->
+                                <div class="form-group">
+                                    <label class="form-control-label" for="">Nombre</label>
+                                    <input type="text" value="" placeholder="Ej: Mario López" name="name" class="form-control" id="inputName">
+                                    <div class="invalid-feedback" id="resultName" style="display: none;">
+                                        <h6>Error..!</h6>No ha comenzado con mayuscula (A-Z) ó ha insertado un símbolo diferente al alfabeto:[a-z]</div>
+                                </div>
+                                <!-- group address-->
+                                <div class="form-group">
+                                    <label class="form-control-label" for="">Dirección</label>
+                                    <input type="text" value="" placeholder="Ej: 4ta. avenida 13-14 zona 1, sololá,sololá" name="direction" class="form-control" id="inputDirection">
+                                    <div class="invalid-feedback" id="resultDirection" style="display: none;">
+                                        <h6>Error..!</h6>No cumple con el formato: calle,+ciudad,+departamento.</div>
+                                </div>
+                                <!-- group mail-->
+                                <div class="form-group">
+                                    <label class="form-control-label" for="">Correo Electronico</label>
+                                    <input type="text" value="" placeholder="Ej: micorreo@empresa.com" name="mail" class="form-control" id="inputMail">
+                                    <div class="invalid-feedback" id="resultMail" style="display: none;">
+                                        <h6>Error..!</h6>"Ha omitido el simbolo @ ó no ha ingresado el dominio de forma correcta |ej: corre@gmail.com|"</div>
+                                </div>
+                                <!-- group password-->
+                                <div class="form-group">
+                                    <label class="form-control-label" for="">Contraseña</label>
+                                    <input type="password" value="" placeholder="Ej: Mi_contr4seña123/%" name="password" class="form-control" id="inputPassword">
+                                    <input type="checkbox" id="ver" class="form-check-input" onChange="hideOrShowPassword()" />
+                                    <label class="form-control-label" for="">Ver</label>
+                                    <div class="invalid-feedback" id="resultPassword" style="display: none;">
+                                        <h6>Error..!</h6>"La contraseña es menor a 8 caracteres| Contraseña débil"</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--column 2-->
+                    <div class="col-md-4 mt-2 text-center">
+                        <div class="card text-white bg-primary mb-auto" style="max-width: 30rem;">
+                            <div class="card-body">
+                                <!-- group sex-->
+                                <div class="form-group">
+                                    <label class="form-control-label" for="">Género</label>
+                                    <input type="text" value="" placeholder="Ej:Femenino" name="sex" class="form-control" id="inputSex">
+                                    <div class="invalid-feedback" id="resultSex" style="display: none;">
+                                        <h6>Error..!</h6>"El dato no es un género |femenino,masculino|"</div>
+                                </div>
+                                <!-- group dpi-->
+                                <div class="form-group">
+                                    <label class="form-control-label">Cui-Dpi</label>
+                                    <input type="text" placeholder="Ej: 2030402370701 / 2030-14562-0701" name="dpi" class="form-control" id="inputDpi">
+                                    <div class="invalid-feedback" id="resultDpi" style="display: none;">
+                                        <h6>Error..!</h6>Los ultimos 4 digitos no esta dentro del rango establecido ó la cantidad es diferente de 13 digitos</div>
+                                </div>
+                                <!-- group nit-->
+                                <div class="form-group">
+                                    <label class="form-control-label">Nit código tributario</label>
+                                    <input type="text" placeholder="Ej: 568465-7" name="nit" class="form-control" id="inputNit">
+                                    <div class="invalid-feedback" id="resultNit" style="display: none;">
+                                        <h6>Error..!</h6>La longitud es menor de 6 digitos o mayor a 8, verifique el(-)antes del último digito</div>
+                                </div>
+                                <!-- group postal cod-->
+                                <div class="form-group">
+                                    <label class="form-control-label" for="inputDanger1">Código postal</label>
+                                    <input type="text" placeholder="Ej: 0101" name="postal" class="form-control" id="inputPostal">
+                                    <div class="invalid-feedback" id="resultPostal" style="display: none;">
+                                        <h6>Error..!</h6>El codigo es diferente de 4 digitos ó no esta dentro del rango establecido</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Colum 3-->
+                    <div class="col-md-4 mt-2 text-center">
+                        <div class="card text-white bg-primary mb-auto" style="max-width: 30rem;">
+                            <div class="card-body">
+                                <!-- group number phone-->
+                                <div class="form-group">
+                                    <label class="form-control-label" for="">Número de teléfono</label>
+                                    <input type="text" placeholder="Ej: 77234625" name="phone" class="form-control" id="inputPhone">
+                                    <div class="invalid-feedback" id="resultPhone" style="display: none;">
+                                        <h6>Error..!</h6>El número es diferente de 8 digitos y no esta dentro del rango de numeros telefonicos (código de pais opcional) </div>
+                                </div>
+                                <!-- group date range-->
+
+                                <div class="form-group ">
+                                    <input type="checkbox" id="hdate" class="form-check-input" onChange="hideOrShowDate()" />
+                                    <label class="form-control-label" for="">Calendario:</label><br>
+                                    <label class="form-control-label" for="">Fecha inicio</label>
+                                    <input type="text" placeholder="Ej: 02-03-2020 | 04/05/2013" name="datei" class="form-control" id="inputDateI">
+                                    <div class="invalid-feedback" id="resultDateI" style="display: none;">
+                                        <h6>Error..!</h6>Ha ingresado una fecha inexistente</div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label" for="">Fecha final</label>
+                                    <input type="text" style="display: none;" placeholder="Ej: 02-03-2020 | 04/05/2013" name="datef" class="form-control" id="inputDateF">
+                                    <div class="invalid-feedback" id="resultDateF" style="display: none;">
+                                        <h6>Error..!</h6>Ha ingresado una fecha inexistente</div>
+                                </div>
+                                <div>
+                                    <div class="alert alert-dismissible alert-light mt-1" id="resultday" style="display: none;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end row-->
+
+                <!--fin de columans-->
+                <div class="alert alert-dismissible alert-danger mt-3 mb-3" id="alertdanger" style="display: none;">
+                    <strong>Error...!</strong>
+                    <a href="#" class="alert-link"><br>Complete los campos de forma correcta..!</div>
+                <!--alert success-->
+                <div class="alert alert-dismissible alert-success mt-3 mb-3" id="alertsuccess" style="display: none;">
+                    <strong>Listo..!</strong><br>Ha llenado el formulario de forma exitosa, verifique sus datos en la tabla de abajo..!</div>
+                <!---button submit-->
+                <div class="card text-center mt-5 mb-2">
+                    <button type="submit" class="form-control btn-info">Enviar</button>
+                </div>
+            </form>
+            <!--lista los datos ingresadosss...-->
+            <div>
+                <table class="table table-light">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Dirección</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">password</th>
+                            <th scope="col">Genero</th>
+                            <th scope="col">Dpi</th>
+                            <th scope="col">Nit</th>
+                            <th scope="col">Postal</th>
+                            <th scope="col">Telefono</th>
+                            <th scope="col">Datei</th>
+                            <th scope="col">Datef</th>
+                            <th scope="col">opc</th>
+                        </tr>
+                    </thead>
+                    <tbody id="registry-list"></tbody>
+                </table>
+            </div>
+        </div>
+        <script src="app.js"></script>
+</body>
+
+</html>
